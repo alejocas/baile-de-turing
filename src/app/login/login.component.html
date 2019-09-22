@@ -1,0 +1,32 @@
+<mat-toolbar color="accent">El Baile de Turing</mat-toolbar>
+<div style="position:absolute; top:0px;  height:98%; width:98%" fxLayout="row" fxLayoutAlign="space-around center">
+    <mat-card class="login-card">
+            <mat-toolbar color="primary">Iniciar sesión</mat-toolbar>
+            <form #loginForm="ngForm" class="login-form" novalidate>
+                <mat-form-field class="full-width">
+                    <input matInput name="userName" #userName placeholder="Usuario" [(ngModel)]="userDto.UserName" type="text" required/>
+                </mat-form-field>
+                
+                <mat-form-field class="full-width">
+                    <input matInput name="password" #password placeholder="Contraseña" [(ngModel)]="userDto.Password" type="password" required />
+                </mat-form-field>
+
+                <div *ngIf="!validUser" class="full-width color-error" fxLayout="row" fxLayoutAlign="center center">
+                    Usuario y/o contraseña incorrectos
+                </div>
+                <br>
+                <div class="full-width" fxLayout="row" fxLayoutAlign="center center">
+                    <button [disabled]="!loginForm.valid" mat-raised-button color="primary" (click)="Login()">Iniciar sesión</button>
+                </div>
+            </form>
+    </mat-card>
+
+    <div>
+        <h1>EL BAILE DE TURING</h1>
+        <div fxLayout="row" fxLayoutAlign="end center">Universidad de Antioquia</div><br><br>
+        <img src="assets/img/logo.png" />
+    </div>
+
+</div>
+
+  

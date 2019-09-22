@@ -1,0 +1,43 @@
+<div>
+    <mat-toolbar color="accent">
+        <mat-toolbar-row>
+            <button mat-icon-button>
+                    <mat-icon class="cursor-hand" (click)="sideNav.toggle()">menu</mat-icon>
+            </button>
+            <a>
+                    <img class="toolbar-logo" src="assets/img/logo.png" />
+            </a>
+            <label class="toolbar-title">El Baile de Turing</label>
+            <span class="spacer"></span>
+            <label>{{loginService.currentUser}}</label>
+            <button mat-icon-button>
+                    <mat-icon class="cursor-hand" (click)="logOut()">power_settings_new</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #sideNav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+                 <ul>
+                        <li>
+                                <a mat-list-item routerLink=".">Menu Item 1</a>
+                              </li>
+                              <li>
+                                <a mat-list-item routerLink=".">Menu Item 2</a>
+                              </li>
+                              <li>
+                                <a mat-list-item routerLink=".">Menu Item 3</a>
+                              </li>
+
+                 </ul>
+      
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="full-width" style="min-height:400px" fxLayout="row" fxLayoutAlign="center center">
+              <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

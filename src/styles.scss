@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// import your custom theme
+@import 'baile-de-turing.scss';
+// include your custom theme with a class
+.turingtheme {
+    @include angular-material-theme($turing-app-theme);
+}
+
+.full-width{
+    width:100%;
+}
+
+$colorError:#FC2E52;
+
+*{
+    margin:0px;
+    padding: 0px;
+}
+
+.color-error{
+    color: $colorError;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+.cursor-hand{
+    cursor: pointer;
+}
+
+.toolbar-logo{
+    height: 45px;
+    margin-top: 5px;
+}
